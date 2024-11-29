@@ -19,12 +19,12 @@ const Footer = () => {
             <ul>
                 <li>Inicio</li>
                 <li>Contactanos</li>
-                <li>Delivery</li>
+                <li>Entregas a domicilio</li>
                 <li>Politica de privacidad</li>
             </ul>
         </div>
         <div className="footer-content-right">
-            <h2>Ponte en contacto</h2>
+            <h2>Contactanos</h2>
             <ul>
                 <li>+1-212-456-7890</li>
                 <li>contact@nutrideliver.com</li>
@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <p className="footer-copyright">Copyright 2024 © NutriDeliver.com - All Right Reserved.</p>
+      <p className="footer-copyright">Copyright 2024 © NutriDeliver.com - Todos los derechos reservados.</p>
     </div>
   )
 }
