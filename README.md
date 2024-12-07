@@ -14,18 +14,17 @@
 ### **Integrantes**
 
 
-- **Becerril Olivar Axel Daniel**  
-- **Castañeda Mora Carlos**  
-- **Cerón Maciel Eduardo Alfredo**  
-- **Colin Mosqueda Eduardo**  
-- **Dávila Reyes Ernesto Gabriel**  
-- **Flores Pérez Milner Ushuaía**  
-- **Guzmán Ramírez Aldo Yael**  
-- **Quiñones Reyes Maximiliano**  
-- **Resendiz Cruz Rodrigo Daniel**  
-- **Valenzuela Vigil Ángel David**
+ **Becerril Olivar Axel Daniel**  
+ **Castañeda Mora Carlos**  
+ **Cerón Maciel Eduardo Alfredo**  
+ **Colin Mosqueda Eduardo**  
+ **Dávila Reyes Ernesto Gabriel**  
+ **Flores Pérez Milner Ushuaía**  
+ **Guzmán Ramírez Aldo Yael**  
+ **Quiñones Reyes Maximiliano**  
+ **Resendiz Cruz Rodrigo Daniel**  
+ **Valenzuela Vigil Ángel David**
 </div>
----
 
 ## **Cómo configurar y ejecutar este proyecto**
 
