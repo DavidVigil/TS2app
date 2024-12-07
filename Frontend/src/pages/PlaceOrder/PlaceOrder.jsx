@@ -53,7 +53,7 @@ const PlaceOrder = () => {
                 window.location.replace(session_url);
             }
             else {
-                toast.error("Algo Salió Mal")
+                toast.error("Something Went Wrong")
             }
         }
         else{
@@ -64,7 +64,7 @@ const PlaceOrder = () => {
                 setCartItems({});
             }
             else {
-                toast.error("Algo Salió Mal")
+                toast.error("Something Went Wrong")
             }
         }
 
@@ -72,7 +72,7 @@ const PlaceOrder = () => {
 
     useEffect(() => {
         if (!token) {
-            toast.error("Para realizar un pedido, inicia sesión primero")
+            toast.error("to place an order sign in first")
             navigate('/cart')
         }
         else if (getTotalCartAmount() === 0) {
@@ -83,46 +83,46 @@ const PlaceOrder = () => {
     return (
         <form onSubmit={placeOrder} className='place-order'>
             <div className="place-order-left">
-                <p className='title'>Información de entrega</p>
+                <p className='title'>Informacion de entrega</p>
                 <div className="multi-field">
-                    <input type="text" name='firstName' onChange={onChangeHandler} value={data.firstName} placeholder='Nombre' required />
-                    <input type="text" name='lastName' onChange={onChangeHandler} value={data.lastName} placeholder='Apellido' required />
+                    <input type="text" name='firstName' onChange={onChangeHandler} value={data.firstName} placeholder='First name' required />
+                    <input type="text" name='lastName' onChange={onChangeHandler} value={data.lastName} placeholder='Last name' required />
                 </div>
-                <input type="email" name='email' onChange={onChangeHandler} value={data.email} placeholder='Correo electrónico' required />
-                <input type="text" name='street' onChange={onChangeHandler} value={data.street} placeholder='Calle' required />
+                <input type="email" name='email' onChange={onChangeHandler} value={data.email} placeholder='Email address' required />
+                <input type="text" name='street' onChange={onChangeHandler} value={data.street} placeholder='Street' required />
                 <div className="multi-field">
-                    <input type="text" name='city' onChange={onChangeHandler} value={data.city} placeholder='Ciudad' required />
-                    <input type="text" name='state' onChange={onChangeHandler} value={data.state} placeholder='Estado' required />
+                    <input type="text" name='city' onChange={onChangeHandler} value={data.city} placeholder='City' required />
+                    <input type="text" name='state' onChange={onChangeHandler} value={data.state} placeholder='State' required />
                 </div>
                 <div className="multi-field">
-                    <input type="text" name='zipcode' onChange={onChangeHandler} value={data.zipcode} placeholder='Código postal' required />
-                    <input type="text" name='country' onChange={onChangeHandler} value={data.country} placeholder='País' required />
+                    <input type="text" name='zipcode' onChange={onChangeHandler} value={data.zipcode} placeholder='Zip code' required />
+                    <input type="text" name='country' onChange={onChangeHandler} value={data.country} placeholder='Country' required />
                 </div>
-                <input type="text" name='phone' onChange={onChangeHandler} value={data.phone} placeholder='Teléfono' required />
+                <input type="text" name='phone' onChange={onChangeHandler} value={data.phone} placeholder='Phone' required />
             </div>
             <div className="place-order-right">
                 <div className="cart-total">
-                    <h2>Total</h2>
+                    <h2>Cart Totals</h2>
                     <div>
                         <div className="cart-total-details"><p>Subtotal</p><p>{currency}{getTotalCartAmount()}</p></div>
                         <hr />
-                        <div className="cart-total-details"><p>Tarifa de envío</p><p>{currency}{getTotalCartAmount() === 0 ? 0 : deliveryCharge}</p></div>
+                        <div className="cart-total-details"><p>Costo de envío</p><p>{currency}{getTotalCartAmount() === 0 ? 0 : deliveryCharge}</p></div>
                         <hr />
                         <div className="cart-total-details"><b>Total</b><b>{currency}{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + deliveryCharge}</b></div>
                     </div>
                 </div>
                 <div className="payment">
-                    <h2>Método de pago</h2>
+                    <h2>Metodo de Pago</h2>
                     <div onClick={() => setPayment("cod")} className="payment-option">
                         <img src={payment === "cod" ? assets.checked : assets.un_checked} alt="" />
-                        <p>COD ( Pago contra entrega )</p>
+                        <p>COD ( Efectivo)</p>
                     </div>
                     <div onClick={() => setPayment("stripe")} className="payment-option">
                         <img src={payment === "stripe" ? assets.checked : assets.un_checked} alt="" />
-                        <p>Stripe (Tarjeta de crédito/débito)</p>
+                        <p>Stripe ( Crédito / Débito )</p>
                     </div>
                 </div>
-                <button className='place-order-submit' type='submit'>{payment==="cod"?"Realizar Pedido" : "Proceder al Pago"}</button>
+                <button className='place-order-submit' type='submit'>{payment==="cod"?"Place Order":"Proceed To Payment"}</button>
             </div>
         </form>
     )

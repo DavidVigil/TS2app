@@ -8,6 +8,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-content-left">
             <img src={assets.logo} alt="" />
+            <p>C. Montes Urales 424, Lomas - Virreyes, Lomas de Chapultepec III Secc, Miguel Hidalgo, 11000 Ciudad de México, CDMX</p>
             <div className="footer-social-icons">
                 <img src={assets.facebook_icon} alt="" />
                 <img src={assets.twitter_icon} alt="" />
@@ -18,21 +19,21 @@ const Footer = () => {
             <h2>COMPAÑIA</h2>
             <ul>
                 <li>Inicio</li>
-                <li>Contactanos</li>
-                <li>Entregas a domicilio</li>
+                <li>Sobre de nosotros</li>
+                <li>Delivery</li>
                 <li>Politica de privacidad</li>
             </ul>
         </div>
         <div className="footer-content-right">
-            <h2>Contactanos</h2>
+            <h2>Ponte en contacto</h2>
             <ul>
-                <li>+1-212-456-7890</li>
+                <li>+52-212-456-7890</li>
                 <li>contact@nutrideliver.com</li>
             </ul>
         </div>
       </div>
       <hr />
-      <p className="footer-copyright">Copyright 2024 © NutriDeliver.com - Todos los derechos reservados.</p>
+      <p className="footer-copyright">Copyright 2024 © NutriDeliver.com - All Right Reserved.</p>
     </div>
   )
 }

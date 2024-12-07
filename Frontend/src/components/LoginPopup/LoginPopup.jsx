@@ -7,8 +7,8 @@ import { toast } from 'react-toastify'
 
 const LoginPopup = ({ setShowLogin }) => {
 
-    const { setToken, url, loadCartData } = useContext(StoreContext)
-    const [currState, setCurrState] = useState("Registrarse");
+    const { setToken, url,loadCartData } = useContext(StoreContext)
+    const [currState, setCurrState] = useState("Sign Up");
 
     const [data, setData] = useState({
         name: "",
@@ -26,7 +26,7 @@ const LoginPopup = ({ setShowLogin }) => {
         e.preventDefault()
 
         let new_url = url;
-        if (currState === "Iniciar sesión") {
+        if (currState === "Login") {
             new_url += "/api/user/login";
         }
         else {
@@ -36,7 +36,7 @@ const LoginPopup = ({ setShowLogin }) => {
         if (response.data.success) {
             setToken(response.data.token)
             localStorage.setItem("token", response.data.token)
-            loadCartData({ token: response.data.token })
+            loadCartData({token:response.data.token})
             setShowLogin(false)
         }
         else {
@@ -51,18 +51,18 @@ const LoginPopup = ({ setShowLogin }) => {
                     <h2>{currState}</h2> <img onClick={() => setShowLogin(false)} src={assets.cross_icon} alt="" />
                 </div>
                 <div className="login-popup-inputs">
-                    {currState === "Registrarse" ? <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Nombre' required /> : <></>}
-                    <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Correo electrónico' />
-                    <input name='password' onChange={onChangeHandler} value={data.password} type="password" placeholder='Contraseña' required />
+                    {currState === "Sign Up" ? <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Your name' required /> : <></>}
+                    <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Your email' />
+                    <input name='password' onChange={onChangeHandler} value={data.password} type="password" placeholder='Password' required />
                 </div>
-                <button>{currState === "Iniciar sesión" ? "Iniciar sesión" : "Crear cuenta"}</button>
+                <button>{currState === "Login" ? "Login" : "Create account"}</button>
                 <div className="login-popup-condition">
                     <input type="checkbox" name="" id="" required/>
                     <p>Al continuar, acepto los términos de uso y la política de privacidad.</p>
                 </div>
-                {currState === "Iniciar sesión"
-                    ? <p>¿No tienes una cuenta? <span onClick={() => setCurrState('Registrarse')}>Haz clic aquí</span></p>
-                    : <p>¿Ya tienes una cuenta? <span onClick={() => setCurrState('Iniciar sesión')}>Inicia sesión aquí</span></p>
+                {currState === "Login"
+                    ? <p>¿Crear una cuenta nueva? <span onClick={() => setCurrState('Sign Up')}>Click here</span></p>
+                    : <p>¿Ya tienes una cuenta? <span onClick={() => setCurrState('Login')}>Login here</span></p>
                 }
             </form>
         </div>
